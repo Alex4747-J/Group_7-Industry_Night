@@ -1,0 +1,205 @@
+/*
+Style Name: Industry Night 
+Description: Class File
+Author: Luciano Clementi 
+Version: 1.0
+*/
+
+
+   :root {
+      --main-padding: 0.9375em;
+      --gap-size:.5em;
+      --ml-gap-size: 1em;
+
+   }
+
+/* _____________________________________
+
+   01-b. Mobile
+   _____________________________________ */
+
+   html { box-sizing: border-box; }
+   *, *::before, *::after { box-sizing: inherit; }
+
+   /*------------ Start mobile ------------*/
+
+   .site { max-width: 48em; }
+
+   .mobile { display: block; }
+   .tablet { display: none; }
+   .desktop { display: none; }
+
+   /*------------ Grid Items mobile ------------*/
+    
+   .head, main > *, .foot {
+      display: grid;
+      grid-template-columns: 1fr repeat(2, minmax(0, 24em)) 1fr;
+      margin-left: var(--gap-size);
+      margin-right: var(--gap-size);
+   }
+
+   .logo-container { grid-column: 1 / -1; }
+   nav { 
+     grid-column: 1 / -1; 
+     justify-self: center; /* keeps the nav centered in the header area */
+   }
+
+   .one-item, .two-items, .three-items, .four-items {
+      display: grid;
+      justify-items: stretch;
+      grid-column-gap: var(--gap-size);
+      grid-column: 2 / span 2;
+   }
+
+   .full { grid-column: 1 / -1; }
+
+   .one-item { grid-template-columns: 1fr; }
+   .two-items { grid-template-columns: repeat(2, 1fr); }
+   .three-items { grid-template-columns: repeat(3, 1fr); }
+   .four-items { grid-template-columns: repeat(4, 1fr); }
+  
+     
+   /* _____________________________________
+
+   01-c. Mobile Landscape
+   _____________________________________ */
+
+   @media screen and (min-width: 48em) {
+
+     .site { max-width: 63.99em; }
+
+     .mobile { display: block; }
+     .tablet { display: none; }
+     .desktop { display: none; }
+
+     .head, main > *, .foot {
+        display: grid;
+        grid-template-columns: 1fr repeat(4, minmax(auto, 15.99em)) 1fr;
+        margin-left: var(--ml-gap-size);
+        margin-right: var(--ml-gap-size);
+     }
+
+     .logo-container { grid-column: 1 / span 1; }
+     nav { grid-column: 2 / span 5; }
+
+     .sm-one-item, 
+     .sm-two-items, 
+     .sm-three-items, 
+     .sm-four-items,
+     .sm-one-third,
+     .sm-two-third,
+     .sm-half-right,
+     .sm-half-left {
+      display: grid;
+      justify-items: stretch;
+      grid-column-gap: var(--gap-size);
+      grid-column: 1 / span 6;
+   }
+
+   .sm-one-item { grid-template-columns: 1fr; }
+   .sm-two-items { grid-template-columns: repeat(2, 1fr); }
+   .sm-three-items { grid-template-columns: repeat(3, 1fr); }
+   .sm-four-items { grid-template-columns: repeat(4, 1fr); }
+   .sm-one-third { grid-template-columns: 1fr 3fr; }
+   .sm-two-third { grid-template-columns: 3fr 1fr; }
+   .sm-half-left { grid-template-columns: 2fr 1fr 1fr; }
+   .sm-half-rigt { grid-template-columns: 1fr 1fr 2fr; }
+
+   }
+   
+   /* _____________________________________
+
+   01-d. Tablet
+   _____________________________________ */
+
+   @media screen and (min-width: 64em) {
+      .site { max-width: 119.99em; }
+
+      .mobile { display: none; }
+      .tablet { display: block; }
+      .desktop { display: none; }
+
+      .head, .main > *, .foot {
+         display: grid;
+         grid-template-columns: 1fr repeat(4, minmax(auto, 15.99em)) 1fr;
+      }
+
+      .logo-container { grid-column: 1 / span 1; }
+      nav { grid-column: 2 / span 6; }
+
+      .md-one-item,
+      .md-two-items,
+      .md-three-items,
+      .md-four-items,
+      .md-one-third,
+      .md-two-third,
+      .md-half-right,
+      .md-half-left {
+         display: grid;
+         justify-items: stretch;
+         grid-column-gap: var(--ml-gap-size);
+         grid-column: 1 / span 6;
+      }
+
+      .md-one-item { grid-template-columns: 1fr; }
+      .md-two-items { grid-template-columns: repeat(2, 1fr); }
+      .md-three-items { grid-template-columns: repeat(3, 1fr); }
+      .md-four-items { grid-template-columns: repeat(4, 1fr); }
+      .md-five-items { grid-template-columns: repeat(5, 1fr); }
+      .md-one-third { grid-template-columns: 1fr 3fr; }
+      .md-two-third { grid-template-columns: 3fr 1fr; }
+      .md-half-right { grid-template-columns: 1fr 1fr 2fr; }
+      .md-half-left { grid-template-columns: 2fr 1fr 1fr; }
+
+   }
+
+   /* _____________________________________
+
+   01-e. Small Desktop & Up
+   _____________________________________ */
+
+   @media screen and (min-width: 120em) {
+
+      .site { max-width: none; }
+
+      .mobile { display: none; }
+      .tablet { display: none; }
+      .desktop { display: block; }
+
+      .head, .main > *, .foot {
+         display: grid;
+         grid-template-columns: 1fr repeat(4, minmax(auto, 30em)) 1fr;
+      }
+
+      .logo-container { grid-column: 1 / span 1; }
+      nav { grid-column: 1 / span 6; }
+
+      .lg-one-item,
+      .lg-two-items,
+      .lg-three-items,
+      .lg-four-items,
+      .lg-one-third,
+      .lg-two-third,
+      .lg-half-right,
+      .lg-half-left {
+         display: grid;
+         justify-items: stretch;
+         grid-column-gap: var(--lg-gap-size);      
+         grid-column: 1 / span 6;
+
+   }
+
+      .lg-one-item { grid-template-columns: 1fr; }
+      .lg-two-items { grid-template-columns: repeat(2, 1fr); }
+      .lg-three-items { grid-template-columns: repeat(3, 1fr); }
+      .lg-four-items { grid-template-columns: repeat(4, 1fr); }
+      .lg-five-items { grid-template-columns: repeat(5, 1fr); }
+      .lg-one-third { grid-template-columns: 1fr 3fr; }
+      .lg-two-third { grid-template-columns: 3fr 1fr; }
+      .lg-half-right { grid-template-columns: 1fr 1fr 2fr; }
+      .lg-half-left { grid-template-columns: 2fr 1fr 1fr; }
+
+   }
+
+
+   /* _____________________________________
