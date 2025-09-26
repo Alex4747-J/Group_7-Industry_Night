@@ -393,14 +393,14 @@ input[type="range"]:focus::-webkit-slider-thumb {
 /** Firefox styles **/
  /* slider track  */
 input[type="range"]::-moz-range-track {
-  background-color: #51ff00;
+  background-color: white;
   border-radius: 0.5rem;
   height: 0.5rem;
 }
 
 /* slider thumb */
 input[type="range"]::-moz-range-thumb {
-  background-color: #6600ff;
+  background-color: white;
   border: none;  /* Removes extra border that FF applies*/
   border-radius: 0.5rem;
   height: 1rem;
@@ -408,7 +408,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 input[type="range"]:focus::-moz-range-thumb{
-  outline: 3px solid #6600ff;
+  outline: 3px solid white;
   outline-offset: 0.125rem;
 }
 
