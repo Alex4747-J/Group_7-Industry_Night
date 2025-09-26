@@ -10,6 +10,7 @@ Version: 1.0
       --main-padding: 0.9375em;
       --gap-size:.5em;
       --ml-gap-size: 1em;
+      --lg-gap-size: 1.25em;
 
    }
 
@@ -31,7 +32,7 @@ Version: 1.0
 
    /*------------ Grid Items mobile ------------*/
     
-   .head, main > *, .foot {
+   .head, .main > *, .foot {
       display: grid;
       grid-template-columns: 1fr repeat(2, minmax(0, 24em)) 1fr;
       margin-left: var(--gap-size);
@@ -41,7 +42,7 @@ Version: 1.0
    .logo-container { grid-column: 1 / -1; }
    nav { 
      grid-column: 1 / -1; 
-     justify-self: center; /* keeps the nav centered in the header area */
+     justify-self: center; /
    }
 
    .one-item, .two-items, .three-items, .four-items {
@@ -72,7 +73,7 @@ Version: 1.0
      .tablet { display: none; }
      .desktop { display: none; }
 
-     .head, main > *, .foot {
+     .head, .main > *, .foot {
         display: grid;
         grid-template-columns: 1fr repeat(4, minmax(auto, 15.99em)) 1fr;
         margin-left: var(--ml-gap-size);
@@ -80,7 +81,7 @@ Version: 1.0
      }
 
      .logo-container { grid-column: 1 / span 1; }
-     nav { grid-column: 2 / span 5; }
+     nav { grid-column: 2 / span -2; }
 
      .sm-one-item, 
      .sm-two-items, 
@@ -122,10 +123,11 @@ Version: 1.0
       .head, .main > *, .foot {
          display: grid;
          grid-template-columns: 1fr repeat(4, minmax(auto, 15.99em)) 1fr;
+         align-items: center;
       }
 
-      .logo-container { grid-column: 1 / span 1; }
-      nav { grid-column: 2 / span 6; }
+      .logo-container { grid-column: 1 / span 1; align-self: center; }
+      nav { grid-column: 2 / -2; justify-self: end; align-self: center; }
 
       .md-one-item,
       .md-two-items,
