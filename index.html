@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/d0e8431583.js" crossorigin="anonymous"></script>
     <link href="css/grid.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <title>Fanshawe Industry Night</title>
 </head>
 <body class="site">
@@ -105,28 +106,12 @@
               <div class="exp-thumb" aria-hidden="true"></div> 
             </div>
         
-            <section class="player-placeholder" id="player-container">
-            <video controls preload="metadata" poster="images/placeholder.jpg">
-                <source src="video/feel_the_beat.mp4" type="video/mp4">
-                <p>You are using an older browser that does not support HTML5 Video. Please update your browser.</p>
-            </video>
-            <div class="video-controls" id="video-controls">
-                <button id="play-button">
-                    <i class="fa fa-play-circle-o"></i>
-                </button>
-                <button id="pause-button">
-                    <i class="fa fa-pause-circle-o"></i>
-                </button>
-                <button id="stop-button">
-                    <i class="fa fa-stop-circle-o"></i>
-                </button>
-                <i class="fa fa-volume-up"></i>
-                <input type="range" id="change-vol" step="0.05" min="0" max="1" value="1">
-                <button id="full-screen">
-                    <i class="fa fa-arrows-alt"></i>
-                </button>
+            <div class="player-placeholder" id="player-container">
+                <video controls preload="metadata" poster="images/placeholder.jpg">
+                 <source src="video/feel_the_beat.mp4" type="video/mp4">
+                 <p>You are using an older browser that does not support HTML5 Video. Please update your browser.</p>
+                </video>
             </div>
-        </section>
         
             <div class="experience-copy">
               <p>Join us for a showcase featuring the work of our IDP3 and UED students, alongside Spotlight presentations highlighting The Royal Canadian Air Force Association (Local 427 Wing) project. Experience the talent and dedication of our students as they proudly present their portfolios, showcasing their passion and skills across various disciplines.</p>
@@ -450,6 +435,7 @@
     </div>
   </div>
 </footer>
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
