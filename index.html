@@ -18,26 +18,36 @@
     <h1 class="hidden">Fanshawe Industry Night</h1>
     <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
     <header class="head">
-        <div class="logo-container">
-            <img src="/images/Fanshawe_College_Logo.png" alt="Fanshawe Logo" class="logo-img">
-          </div>
-          <nav>
-            <ul class="nav-links">
-              <li><a href="#">Event</a></li>
-              <li><a href="#">Project</a></li>
-              <li><a href="#">Programs</a></li>
-              <li><a href="#">Portfolios</a></li>
-            </ul>
-          </nav>
+      <div class="logo-container">
+        <img src="images/fanshawe_logo_wide.jpg" alt="Fanshawe wordmark" class="logo-img logo-img-mobile">
+      </div>
+    
+      <!-- Hamburger opens #menu via :target -->
+      <a href="#menu" class="hamburger" aria-label="Open menu">
+        <span class="hamburger-box" aria-hidden="true"></span>
+      </a>
+    
+      <!-- Give nav an id so :target can open it -->
+      <nav id="menu" aria-label="Primary">
+        <ul class="nav-links">
+          <!-- Plain anchors: clicking any of these changes the hash away from #menu, so the drawer closes -->
+          <li><a href="#industry-night">Event</a></li>
+          <li><a href="#student-project">Project</a></li>
+          <li><a href="#imd">Programs</a></li>
+          <li><a href="#showcase">Portfolios</a></li>
+        </ul>
+      </nav>
+    
+      <!-- Scrim is an anchor back to top (no hash) to clear :target -->
+      <a href="#" class="nav-scrim" hidden aria-hidden="true"></a>
     </header>
     <main id="content" class="main">
-        <section>
-            <div class="full">
-                <div class="box-model">Annimation</div>
-            </div>
-        </section>
-
-        <section id="industry-night" class="industry-section">
+      <!-- Animation placeholder: lives under the sticky header, above the red section -->
+      <section id="welcome" class="welcome-anim full" aria-label="Welcome animation">
+        
+      </section>
+    
+      <section id="industry-night" class="industry-section">
           <div class="industry-wrap">
         
             <div class="industry-grid md-two-items lg-two-items"> 
@@ -67,7 +77,7 @@
               </div>
         
               <div class="industry-media">
-                <div class="industry-gallery" aria-label="Image gallery placeholder">
+                <div class="industry-gallery">
                   <div class="g-left"  aria-hidden="true"></div>
                   <div class="g-center" aria-hidden="true"></div>
                   <div class="g-right" aria-hidden="true"></div>
@@ -102,18 +112,34 @@
               <span class="line2">INNOVATIVE EXPERIENCE</span>
             </h2>
         
-            <div class="exp-thumbs md-three-items lg-three-items" aria-label="Image gallery placeholders"> 
+            <div class="exp-thumbs md-three-items lg-three-items"> 
               <div class="exp-thumb" aria-hidden="true"></div> 
               <div class="exp-thumb" aria-hidden="true"></div> 
               <div class="exp-thumb" aria-hidden="true"></div> 
             </div>
         
             <div class="player-placeholder" id="player-container">
-                <video controls preload="metadata" poster="images/placeholder.jpg">
-                 <source src="video/feel_the_beat.mp4" type="video/mp4">
-                 <p>You are using an older browser that does not support HTML5 Video. Please update your browser.</p>
-                </video>
+            <video controls preload="metadata" poster="images/placeholder.jpg">
+                <source src="video/feel_the_beat.mp4" type="video/mp4">
+                <p>You are using an older browser that does not support HTML5 Video. Please update your browser.</p>
+            </video>
+            <div class="video-controls" id="video-controls">
+                <button id="play-button">
+                    <i class="fa fa-play-circle-o"></i>
+                </button>
+                <button id="pause-button">
+                    <i class="fa fa-pause-circle-o"></i>
+                </button>
+                <button id="stop-button">
+                    <i class="fa fa-stop-circle-o"></i>
+                </button>
+                <i class="fa fa-volume-up"></i>
+                <input type="range" id="change-vol" step="0.05" min="0" max="1" value="1">
+                <button id="full-screen">
+                    <i class="fa fa-arrows-alt"></i>
+                </button>
             </div>
+          </div>
         
             <div class="experience-copy">
               <p>Join us for a showcase featuring the work of our IDP3 and UED students, alongside Spotlight presentations highlighting The Royal Canadian Air Force Association (Local 427 Wing) project. Experience the talent and dedication of our students as they proudly present their portfolios, showcasing their passion and skills across various disciplines.</p>
@@ -292,7 +318,7 @@
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Alex Nguyen headshot placeholder">
-          <p class="member-name">ALEX<br>NGUYEN</p>
+          <h3 class="member-name">ALEX<br>NGUYEN</h3>
           <p class="member-role">PROJECT<br>MANAGEMER</p>
         </article>
   
@@ -300,7 +326,7 @@
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Luciano Clementine headshot placeholder">
-          <p class="member-name">LUCIANO<br>CLEMENTI</p>
+          <h3 class="member-name">LUCIANO<br>CLEMENTI</h3>
           <p class="member-role">FRONT-END</p>
         </article>
   
@@ -308,7 +334,7 @@
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Ajay Charkaravathy headshot placeholder">
-          <p class="member-name">AJAY<br>CHARKARAVATHY</p>
+          <h3 class="member-name">AJAY<br>CHARKARAVATHY</h3>
           <p class="member-role">BACK-END</p>
         </article>
   
@@ -316,7 +342,7 @@
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Andrea Do headshot placeholder">
-          <p class="member-name">ANDREA<br>DO</p>
+          <h3 class="member-name">ANDREA<br>DO</h3>
           <p class="member-role">GRAPHIC<br>DESIGNER</p>
         </article>
   
@@ -358,7 +384,7 @@
       <article class="show-item">
         <img class="show-avatar" src="https://placehold.co/90x90/777777/555555?text=%20" alt="Alex Nguyen">
         <div class="show-meta">
-          <p class="show-name">ALEX NGUYEN</p>
+          <h3 class="show-name">ALEX NGUYEN</h3>
           <p class="show-role">PROJECT<br>MANAGEMENT</p>
         </div>
         <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
@@ -367,7 +393,7 @@
       <article class="show-item">
         <img class="show-avatar" src="https://placehold.co/90x90/777777/555555?text=%20" alt="Amy Armstrong">
         <div class="show-meta">
-          <p class="show-name">AMY ARMSTRONG</p>
+          <h3 class="show-name">AMY ARMSTRONG</h3>
           <p class="show-role">FRONT-END</p>
         </div>
         <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
@@ -376,7 +402,7 @@
       <article class="show-item">
         <img class="show-avatar" src="https://placehold.co/90x90/777777/555555?text=%20" alt="Andrea Do">
         <div class="show-meta">
-          <p class="show-name">ANDREA DO</p>
+          <h3 class="show-name">ANDREA DO</h3>
           <p class="show-role">GRAPHIC DESIGN</p>
         </div>
         <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
@@ -385,7 +411,7 @@
       <article class="show-item">
         <img class="show-avatar" src="https://placehold.co/90x90/777777/555555?text=%20" alt="Ajay Antony Raj">
         <div class="show-meta">
-          <p class="show-name">AJAY ANTONY RAJ</p>
+          <h3 class="show-name">AJAY ANTONY RAJ</h3>
           <p class="show-role">BACK-END</p>
         </div>
         <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
@@ -394,7 +420,7 @@
       <article class="show-item">
         <img class="show-avatar" src="https://placehold.co/90x90/777777/555555?text=%20" alt="Sydney Bandarra">
         <div class="show-meta">
-          <p class="show-name">SYDNEY BANDARRA</p>
+          <h3 class="show-name">SYDNEY BANDARRA</h3>
           <p class="show-role">GRAPHIC DESIGN</p>
         </div>
         <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
@@ -412,7 +438,7 @@
  <footer class="foot">
   <div class="footer-wrap">
     <div class="footer-brand">
-      <img src="/images/Red And White Abstract Logo.jpg" alt="Fanshawe" class="footer-logo">
+      <img src="/images/Red_And_White_Abstract_Logo.jpg" alt="Fanshawe" class="footer-logo">
     </div>
 
     <p class="footer-copy">
