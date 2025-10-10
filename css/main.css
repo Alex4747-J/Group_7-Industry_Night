@@ -83,28 +83,25 @@ textarea {
   box-shadow: 0 1px 0 rgba(0,0,0,0.06);
 }
 
-/* Mobile header layout: left logo, right hamburger */
+
 .logo-container {
   text-align: left;
   background: #fff;
-  padding: .5rem 0;                 /* smaller mobile header */
+  padding: .5rem 0;               
 }
-.logo-img-desktop { display: none; } /* hide desktop logo on mobile */
+.logo-img-desktop { display: none; } 
 .logo-img {
   display: block;
   width: clamp(160px, 40vw, 240px);
   height: auto;
-  margin-left: .5rem;   /* keeps that small left margin on all sizes */
+  margin-left: .5rem;  
 }
 
-/* Mobile nav as dropdown (hidden by default) */
+
 @media screen and (max-width: 47.99em) {
   .head nav { position: relative; padding-right: .5rem; }
-
-  /* keep the header compact and reserve space for the icon */
   .head { padding-right: 2.5rem; }
 
-  /* place the hamburger on the right and center it vertically within the header */
   .head .hamburger {
     position: absolute;
     right: .5rem;
@@ -128,10 +125,10 @@ textarea {
   .hamburger-box::before { top: -7px; }
   .hamburger-box::after  { top: 7px; }
 
-  /* Drawer panel (stays the same size you liked) */
+  
   .nav-links {
     position: fixed; top: 0; right: 0;
-    height: 100vh; width: 30%; max-width: 320px;   /* ≈ a quarter of most phones */
+    height: 100vh; width: 30%; max-width: 320px;  
     background: #fff; color: #111; list-style: none;
     margin: 0; padding: 1rem 0;
     display: flex; flex-direction: column;
@@ -148,26 +145,23 @@ textarea {
   }
   .nav-links li a:hover { background: #f5f5f5; }
 
-  /* Scrim behind the drawer (now an anchor) */
+  
   .nav-scrim { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 1001; }
   .nav-scrim[hidden] { display: none; }
 
-  /* OPEN STATE via :target on the <nav id="menu"> */
   #menu:target .nav-links { transform: translateX(0); }
   #menu:target + .nav-scrim { display: block; }
 
-  /* Optional: morph hamburger into X while open (uses :has; widely supported now) */
   .head:has(#menu:target) .hamburger .hamburger-box { background: transparent; }
   .head:has(#menu:target) .hamburger .hamburger-box::before { top: 0; transform: rotate(45deg); }
   .head:has(#menu:target) .hamburger .hamburger-box::after  { top: 0; transform: rotate(-45deg); }
 
-  /* Offset in-page anchors for the sticky header */
   [id] { scroll-margin-top: 76px; }
 }
 
-/* Tablet/Desktop restore original behavior */
+
 @media screen and (min-width: 48em) {
-  .hamburger { display: none; }  /* keep this; desktop uses inline nav */
+  .hamburger { display: none; }  
 
   .logo-container {
     display: flex; align-items: center;
@@ -190,7 +184,6 @@ textarea {
     border-radius: 0;
   }
 
-  /* keep your desktop/tablet link colors from earlier */
   .nav-links li a {
     color: #9a2018;
     font-weight: 800;
@@ -437,42 +430,33 @@ input[type="submit"] {
 
 
 @media screen and (min-width: 64em) {
-  .industry-section .industry-title h2 {
-    text-align: left;
-    font-size: 2rem;
-    line-height: 1.15;
-  }
-
-  .industry-section .industry-title .t-black {
-    display: inline-block;
-    padding-bottom: .2rem;
-    border-bottom: 4px solid #111;
-    margin-right: .4ch;
-  }
-
-  .industry-section .title-divider {
-    width: 68%;
-    margin: .75rem 0 1.25rem;
-  }
-
-  .industry-section .industry-media .industry-gallery {
-    display: block;
-    max-width: 38rem;
-    margin-left: auto;
-  }
-
-  .industry-section .industry-media .g-left,
-  .industry-section .industry-media .g-right {
-    display: none;
-  }
-
   .industry-section .industry-media .g-center {
     display: block;
     aspect-ratio: 4 / 3;
+    min-height: 360px;
+    background: url("../images/title_image.jpg") center / cover no-repeat;
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 8px;
+    box-shadow: 0 16px 28px rgba(0,0,0,.18),
+                0 6px 12px rgba(0,0,0,.10);
+
     height: auto;
-    border: 6px solid #eee;
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08) inset;
+    transform: translateX(70px);
   }
+
+   .industry-section .industry-media .industry-gallery .g-left,
+   .industry-section .industry-media .industry-gallery .g-right {
+     display: none !important;
+     background: transparent !important;
+   }
+ 
+
+   .industry-section .industry-media .industry-gallery {
+     display: block;
+     max-width: 38rem;
+     margin-left: auto;
+   }
 
   .industry-section .it-heading {
     position: relative;
@@ -637,29 +621,42 @@ input[type="submit"] {
     width: 100%;
   }
 
-  .experience-title::before {
-    display: none;
+  .experience-title::before { display: none; }
+  .experience-title::after  {
+    left: 0; right: 0; transform: none; width: 100%;
+    height: 6px; border-radius: 0;
   }
 
-  .experience-title::after {
-    left: 0;
-    right: 0;
-    transform: none;
-    width: 100%;
-    height: 6px;
-    border-radius: 0;
-  }
-
+  /* DESKTOP thumbnails above the player */
   .exp-thumbs {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
     gap: 1rem;
     margin: .9rem 0 1.4rem;
   }
 
-  .exp-thumb {
-    background: #bdbdbd;
+  .experience-section .exp-thumbs .exp-thumb {
     aspect-ratio: 16 / 9;
-    border-radius: 2px;
+    border-radius: 8px;
+    background-color: transparent !important; 
+    border: 0 !important;                     
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;                           
+    box-shadow: 0 10px 22px rgba(0,0,0,.16),
+                0 4px 8px rgba(0,0,0,.10);      
+  }
+
+  .exp-thumb:nth-child(1) {
+    background-image: url("../images/DN_2.jpg");
+  }
+  .exp-thumb:nth-child(2) {
+    background-image: url("../images/DN_5.jpg");
+  }
+  .exp-thumb:nth-child(3) {
+    background-image: url("../images/DN_4.jpg");
   }
 
   .player-placeholder {
@@ -2048,3 +2045,10 @@ input[type="submit"] {
     max-width: 320px;
   }
 }
+
+.welcome-anim {
+
+  min-height: 120px;       
+  background: transparent;  
+}
+
