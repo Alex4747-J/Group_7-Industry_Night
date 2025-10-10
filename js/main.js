@@ -397,6 +397,7 @@ function createExpandedContent() {
 function handlePortfolioExpand(event) {
     const item = event.currentTarget.closest('.show-item');
     const caret = event.currentTarget.querySelector('.caret');
+    const existingDetails = item.querySelector('.show-details');
     
     // I'm toggling the expanded state
     item.classList.toggle('expanded');
@@ -411,6 +412,9 @@ function handlePortfolioExpand(event) {
         }
     } else {
         caret.style.transform = 'rotate(0deg)';
+        if (existingDetails) {
+        existingDetails.remove();
+    }
     }
 }
 
