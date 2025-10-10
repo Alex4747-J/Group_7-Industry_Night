@@ -39,10 +39,10 @@ Version: 1.0
       margin-right: var(--gap-size);
    }
 
-   .logo-container { grid-column: 1 / -1; }
+   .logo-container { grid-column: 2 / 1; }
    nav { 
-     grid-column: 1 / -1; 
-     justify-self: center; /
+     grid-column: 3 / 11; 
+     justify-self: end; /
    }
 
    .one-item, .two-items, .three-items, .four-items {
