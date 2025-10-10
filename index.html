@@ -60,7 +60,9 @@
                   </h2>
                   <hr class="title-divider">
                 </div>
-        
+                        <!-- Countdown Timer -->
+                    <div id="countdown-timer"></div>
+
                 <div class="industry-details">
                   <h3 class="dt-heading">Date</h3>
                   <p class="strong">April 23rd, 2025</p>
@@ -312,7 +314,7 @@
   
       <div class="team-grid">
   
-        <article class="member-card">
+        <article class="member-card" style="--card-index: 0;">
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Alex Nguyen headshot placeholder">
@@ -320,7 +322,7 @@
           <p class="member-role">PROJECT<br>MANAGEMER</p>
         </article>
   
-        <article class="member-card">
+        <article class="member-card" style="--card-index: 1;">
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Luciano Clementine headshot placeholder">
@@ -328,7 +330,7 @@
           <p class="member-role">FRONT-END</p>
         </article>
   
-        <article class="member-card">
+        <article class="member-card" style="--card-index: 2;">
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Ajay Charkaravathy headshot placeholder">
@@ -336,7 +338,7 @@
           <p class="member-role">BACK-END</p>
         </article>
   
-        <article class="member-card">
+        <article class="member-card" style="--card-index: 3;">
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Andrea Do headshot placeholder">
@@ -385,7 +387,7 @@
           <h3 class="show-name">ALEX NGUYEN</h3>
           <p class="show-role">PROJECT<br>MANAGEMENT</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
       <article class="show-item">
@@ -394,7 +396,7 @@
           <h3 class="show-name">AMY ARMSTRONG</h3>
           <p class="show-role">FRONT-END</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
       <article class="show-item">
@@ -403,7 +405,7 @@
           <h3 class="show-name">ANDREA DO</h3>
           <p class="show-role">GRAPHIC DESIGN</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
       <article class="show-item">
@@ -412,7 +414,7 @@
           <h3 class="show-name">AJAY ANTONY RAJ</h3>
           <p class="show-role">BACK-END</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
       <article class="show-item">
@@ -421,7 +423,7 @@
           <h3 class="show-name">SYDNEY BANDARRA</h3>
           <p class="show-role">GRAPHIC DESIGN</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
     </div>
@@ -455,9 +457,9 @@
     </nav>
 
     <div class="footer-ctas">
-      <a class="btn-pill" href="index.html">EVENT DETAILS</a>
-      <a class="btn-pill" href="index.html">EVENT LOCATIONS</a>
-      <a class="btn-pill" href="index.html">TOUR FANSHAWE</a>
+      <a class="btn-pill" href="#industry-night">EVENT DETAILS</a>
+      <a class="btn-pill" href="#industry-night">EVENT LOCATIONS</a>
+      <a class="btn-pill" href="#imd">TOUR FANSHAWE</a>
     </div>
   </div>
 </footer>
