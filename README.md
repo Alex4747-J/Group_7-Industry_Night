@@ -1,4 +1,4 @@
-# Nguyen_Anh-Do_An-Ajay_Atony_Raj-Clementi_Luciano-Industry_Night_Site-main
+# Nguyen_Anh-Do_An-Ajay_Antony_Raj-Clementi_Luciano-Industry_Night_Site-main
 This is a repo for the Industry Night Site Project build for the Fall Semester of IDP3.
 ## Subject
 This is a repo containing the coding for Industry Night Site Project build the Fall Semester of IDP3.
