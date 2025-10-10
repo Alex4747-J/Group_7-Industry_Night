@@ -75,71 +75,137 @@ textarea {
   display: none;
 }
 
-.logo {
-  padding: 0;
-  background: none;
-}
-
-.logo-container {
-  width: 100%;
-  text-align: center;
-  background: #fff;
-  padding: 1.5em 0 1em 0;
-  margin: 0 auto;
-}
-
-.logo-img {
-  max-width: 160px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
 .head {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: #fff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-  margin-left: 0;
-  margin-right: 0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
 }
 
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  gap: 1.6em;
+/* Mobile header layout: left logo, right hamburger */
+.logo-container {
+  text-align: left;
+  background: #fff;
+  padding: .5rem 0;                 /* smaller mobile header */
+}
+.logo-img-desktop { display: none; } /* hide desktop logo on mobile */
+.logo-img {
+  display: block;
+  width: clamp(160px, 40vw, 240px);
+  height: auto;
+  margin-left: .5rem;   /* keeps that small left margin on all sizes */
+}
+
+/* Mobile nav as dropdown (hidden by default) */
+@media screen and (max-width: 47.99em) {
+  .head nav { position: relative; padding-right: .5rem; }
+
+  /* keep the header compact and reserve space for the icon */
+  .head { padding-right: 2.5rem; }
+
+  /* place the hamburger on the right and center it vertically within the header */
+  .head .hamburger {
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
+  }
+
+  .hamburger {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 36px; border: 0; background: transparent; cursor: pointer;
+  }
+  .hamburger-box {
+    width: 24px; height: 2px; background: #9a2018; position: relative; display: block;
+    transition: background .2s ease;
+  }
+  .hamburger-box::before, .hamburger-box::after {
+    content: ""; position: absolute; left: 0; right: 0; height: 2px; background: #9a2018;
+    transition: transform .2s ease, top .2s ease;
+  }
+  .hamburger-box::before { top: -7px; }
+  .hamburger-box::after  { top: 7px; }
+
+  /* Drawer panel (stays the same size you liked) */
+  .nav-links {
+    position: fixed; top: 0; right: 0;
+    height: 100vh; width: 30%; max-width: 320px;   /* ≈ a quarter of most phones */
+    background: #fff; color: #111; list-style: none;
+    margin: 0; padding: 1rem 0;
+    display: flex; flex-direction: column;
+    transform: translateX(100%);
+    transition: transform .25s ease-in-out;
+    z-index: 1002;
+    box-shadow: -8px 0 20px rgba(0,0,0,.12);
+    border-left: 1px solid #eee;
+  }
+  .nav-links li { margin: 0; }
+  .nav-links li a {
+    display: block; padding: .9rem 1.1rem;
+    color: #9a2018; font-weight: bold;
+  }
+  .nav-links li a:hover { background: #f5f5f5; }
+
+  /* Scrim behind the drawer (now an anchor) */
+  .nav-scrim { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 1001; }
+  .nav-scrim[hidden] { display: none; }
+
+  /* OPEN STATE via :target on the <nav id="menu"> */
+  #menu:target .nav-links { transform: translateX(0); }
+  #menu:target + .nav-scrim { display: block; }
+
+  /* Optional: morph hamburger into X while open (uses :has; widely supported now) */
+  .head:has(#menu:target) .hamburger .hamburger-box { background: transparent; }
+  .head:has(#menu:target) .hamburger .hamburger-box::before { top: 0; transform: rotate(45deg); }
+  .head:has(#menu:target) .hamburger .hamburger-box::after  { top: 0; transform: rotate(-45deg); }
+
+  /* Offset in-page anchors for the sticky header */
+  [id] { scroll-margin-top: 76px; }
+}
+
+/* Tablet/Desktop restore original behavior */
+@media screen and (min-width: 48em) {
+  .hamburger { display: none; }  /* keep this; desktop uses inline nav */
+
+  .logo-container {
+    display: flex; align-items: center;
+    padding: 1.5em 0 1em .75rem;
+  }
+
+  .nav-links {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 1.6em;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  /* keep your desktop/tablet link colors from earlier */
+  .nav-links li a {
+    color: #9a2018;
+    font-weight: 800;
+    padding: .25rem 0;
+  }
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    color: #7c1a14;
+    text-decoration: none;
+    outline: none;
+  }
 }
 
 @media screen and (min-width: 64em) {
-  .nav-links {
-    justify-content: flex-end;
-    gap: 2.2em;
-  }
-
-  .logo-container {
-    display: flex;
-    align-items: center;
-    padding-left: .75rem;
-  }
-}
-
-.nav-links li a {
-  color: #9a2018;
-  font-weight: bold;
-  padding: 0.5em 0.8em;
-  border-radius: 2px;
-  transition: background 0.2s;
-}
-
-.nav-links li a:hover {
-  background: #f1f1f1;
+  .nav-links { justify-content: flex-end; gap: 2.2em; }
 }
 
 
