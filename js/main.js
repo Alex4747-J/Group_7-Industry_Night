@@ -411,6 +411,9 @@ function handlePortfolioExpand(event) {
         }
     } else {
         caret.style.transform = 'rotate(0deg)';
+        if (existingDetails) {
+        existingDetails.remove();
+    }
     }
 }
 

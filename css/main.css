@@ -80,21 +80,24 @@ textarea {
   top: 0;
   z-index: 1000;
   background: #fff;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
 }
 
 
 .logo-container {
   text-align: left;
   background: #fff;
-  padding: .5rem 0;               
+  padding: .5rem 0;
 }
-.logo-img-desktop { display: none; } 
+
+.logo-img-desktop {
+  display: none;
+}
+
 .logo-img {
   display: block;
   width: clamp(160px, 40vw, 240px);
   height: auto;
-  margin-left: .5rem;  
+  margin-left: .5rem;
 }
 
 .head {
@@ -262,33 +265,70 @@ textarea {
   .hamburger {
     display: none;
   }
-  .nav-links li { margin: 0; }
-  .nav-links li a {
-    display: block; padding: .9rem 1.1rem;
-    color: #9a2018; font-weight: bold;
+
+  .nav-links li {
+    margin: 0;
   }
-  .nav-links li a:hover { background: #f5f5f5; }
 
-  
-  .nav-scrim { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 1001; }
-  .nav-scrim[hidden] { display: none; }
+  .nav-links li a {
+    display: block;
+    padding: .9rem 1.1rem;
+    color: #9a2018;
+    font-weight: bold;
+  }
 
-  #menu:target .nav-links { transform: translateX(0); }
-  #menu:target + .nav-scrim { display: block; }
+  .nav-links li a:hover {
+    background: #f5f5f5;
+  }
 
-  .head:has(#menu:target) .hamburger .hamburger-box { background: transparent; }
-  .head:has(#menu:target) .hamburger .hamburger-box::before { top: 0; transform: rotate(45deg); }
-  .head:has(#menu:target) .hamburger .hamburger-box::after  { top: 0; transform: rotate(-45deg); }
 
-  [id] { scroll-margin-top: 76px; }
+  .nav-scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 1001;
+  }
+
+  .nav-scrim[hidden] {
+    display: none;
+  }
+
+  #menu:target .nav-links {
+    transform: translateX(0);
+  }
+
+  #menu:target+.nav-scrim {
+    display: block;
+  }
+
+  .head:has(#menu:target) .hamburger .hamburger-box {
+    background: transparent;
+  }
+
+  .head:has(#menu:target) .hamburger .hamburger-box::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .head:has(#menu:target) .hamburger .hamburger-box::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  [id] {
+    scroll-margin-top: 76px;
+  }
 }
 
 
 @media screen and (min-width: 48em) {
-  .hamburger { display: none; }  
+  .hamburger {
+    display: none;
+  }
 
   .logo-container {
-    display: flex; align-items: center;
+    display: flex;
+    align-items: center;
     padding: 1.5em 0 1em .75rem;
   }
 
@@ -758,10 +798,17 @@ input[type="submit"] {
     width: 100%;
   }
 
-  .experience-title::before { display: none; }
-  .experience-title::after  {
-    left: 0; right: 0; transform: none; width: 100%;
-    height: 6px; border-radius: 0;
+  .experience-title::before {
+    display: none;
+  }
+
+  .experience-title::after {
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 0;
   }
 
   /* DESKTOP thumbnails above the player */
@@ -2441,11 +2488,16 @@ input[type="submit"] {
 }
 
 .show-details {
+  display: block;
   grid-column: 1 / -1;
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 2px solid #d82424;
   animation: slideDown 0.3s ease;
+}
+
+.show-item:not(.expanded) .show-details {
+  display: none;
 }
 
 @keyframes slideDown {
