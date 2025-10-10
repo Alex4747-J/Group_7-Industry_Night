@@ -50,7 +50,9 @@
                   </h2>
                   <hr class="title-divider">
                 </div>
-        
+                        <!-- Countdown Timer -->
+                    <div id="countdown-timer"></div>
+
                 <div class="industry-details">
                   <h3 class="dt-heading">Date</h3>
                   <p class="strong">April 23rd, 2025</p>
@@ -107,10 +109,17 @@
             </div>
         
             <div class="player-placeholder" id="player-container">
+<<<<<<< Updated upstream
                 <video controls preload="metadata" poster="images/placeholder.jpg">
                  <source src="video/feel_the_beat.mp4" type="video/mp4">
                  <p>You are using an older browser that does not support HTML5 Video. Please update your browser.</p>
                 </video>
+=======
+              <video controls preload="metadata" poster="images/placeholder.jpg">
+                <source src="video/feel_the_beat.mp4" type="video/mp4">
+                  <p>You are using an older browser that does not support HTML5 Video. Please update your browser.</p>
+              </video>
+>>>>>>> Stashed changes
             </div>
         
             <div class="experience-copy">
@@ -286,7 +295,7 @@
   
       <div class="team-grid">
   
-        <article class="member-card">
+        <article class="member-card" style="--card-index: 0;">
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Alex Nguyen headshot placeholder">
@@ -294,7 +303,7 @@
           <p class="member-role">PROJECT<br>MANAGEMER</p>
         </article>
   
-        <article class="member-card">
+        <article class="member-card" style="--card-index: 1;">
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Luciano Clementine headshot placeholder">
@@ -302,7 +311,7 @@
           <p class="member-role">FRONT-END</p>
         </article>
   
-        <article class="member-card">
+        <article class="member-card" style="--card-index: 2;">
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Ajay Charkaravathy headshot placeholder">
@@ -310,7 +319,7 @@
           <p class="member-role">BACK-END</p>
         </article>
   
-        <article class="member-card">
+        <article class="member-card" style="--card-index: 3;">
           <img class="member-photo"
                src="https://placehold.co/400x400/5a5a5a/444444?text=Photo"
                alt="Andrea Do headshot placeholder">
@@ -359,7 +368,7 @@
           <p class="show-name">ALEX NGUYEN</p>
           <p class="show-role">PROJECT<br>MANAGEMENT</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
       <article class="show-item">
@@ -368,7 +377,7 @@
           <p class="show-name">AMY ARMSTRONG</p>
           <p class="show-role">FRONT-END</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
       <article class="show-item">
@@ -377,7 +386,7 @@
           <p class="show-name">ANDREA DO</p>
           <p class="show-role">GRAPHIC DESIGN</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
       <article class="show-item">
@@ -386,7 +395,7 @@
           <p class="show-name">AJAY ANTONY RAJ</p>
           <p class="show-role">BACK-END</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
       <article class="show-item">
@@ -395,7 +404,7 @@
           <p class="show-name">SYDNEY BANDARRA</p>
           <p class="show-role">GRAPHIC DESIGN</p>
         </div>
-        <div class="show-action" aria-hidden="true"><span class="caret"></span></div>
+        <button class="show-action" aria-label="Expand details"><span class="caret"></span></button>
       </article>
 
     </div>
@@ -429,9 +438,9 @@
     </nav>
 
     <div class="footer-ctas">
-      <a class="btn-pill" href="index.html">EVENT DETAILS</a>
-      <a class="btn-pill" href="index.html">EVENT LOCATIONS</a>
-      <a class="btn-pill" href="index.html">TOUR FANSHAWE</a>
+      <a class="btn-pill" href="#industry-night">EVENT DETAILS</a>
+      <a class="btn-pill" href="#industry-night">EVENT LOCATIONS</a>
+      <a class="btn-pill" href="#imd">TOUR FANSHAWE</a>
     </div>
   </div>
 </footer>

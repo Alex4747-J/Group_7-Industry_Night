@@ -101,6 +101,7 @@ textarea {
   z-index: 1000;
   background: #fff;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+<<<<<<< Updated upstream
   margin-left: 0;
   margin-right: 0;
 }
@@ -115,6 +116,202 @@ textarea {
   margin: 0;
   list-style: none;
   gap: 1.6em;
+=======
+}
+
+
+.logo-container {
+  text-align: left;
+  background: #fff;
+  padding: .5rem 0;
+}
+
+.logo-img-desktop {
+  display: none;
+}
+
+.logo-img {
+  display: block;
+  width: clamp(160px, 40vw, 240px);
+  height: auto;
+  margin-left: .5rem;
+}
+
+
+@media screen and (max-width: 47.99em) {
+  .head nav {
+    position: relative;
+    padding-right: .5rem;
+  }
+
+  .head {
+    padding-right: 2.5rem;
+  }
+
+  .head .hamburger {
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 0;
+  }
+
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 36px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .hamburger-box {
+    width: 24px;
+    height: 2px;
+    background: #9a2018;
+    position: relative;
+    display: block;
+    transition: background .2s ease;
+  }
+
+  .hamburger-box::before,
+  .hamburger-box::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #9a2018;
+    transition: transform .2s ease, top .2s ease;
+  }
+
+  .hamburger-box::before {
+    top: -7px;
+  }
+
+  .hamburger-box::after {
+    top: 7px;
+  }
+
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 30%;
+    max-width: 320px;
+    background: #fff;
+    color: #111;
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform .25s ease-in-out;
+    z-index: 1002;
+    box-shadow: -8px 0 20px rgba(0, 0, 0, .12);
+    border-left: 1px solid #eee;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: .9rem 1.1rem;
+    color: #9a2018;
+    font-weight: bold;
+  }
+
+  .nav-links li a:hover {
+    background: #f5f5f5;
+  }
+
+
+  .nav-scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 1001;
+  }
+
+  .nav-scrim[hidden] {
+    display: none;
+  }
+
+  #menu:target .nav-links {
+    transform: translateX(0);
+  }
+
+  #menu:target+.nav-scrim {
+    display: block;
+  }
+
+  .head:has(#menu:target) .hamburger .hamburger-box {
+    background: transparent;
+  }
+
+  .head:has(#menu:target) .hamburger .hamburger-box::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .head:has(#menu:target) .hamburger .hamburger-box::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  [id] {
+    scroll-margin-top: 76px;
+  }
+}
+
+
+@media screen and (min-width: 48em) {
+  .hamburger {
+    display: none;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    padding: 1.5em 0 1em .75rem;
+  }
+
+  .nav-links {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 1.6em;
+    box-shadow: none;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .nav-links li a {
+    color: #9a2018;
+    font-weight: 800;
+    padding: .25rem 0;
+  }
+
+  .nav-links li a:hover,
+  .nav-links li a:focus {
+    color: #7c1a14;
+    text-decoration: none;
+    outline: none;
+  }
+>>>>>>> Stashed changes
 }
 
 @media screen and (min-width: 64em) {
@@ -122,6 +319,7 @@ textarea {
     justify-content: flex-end;
     gap: 2.2em;
   }
+<<<<<<< Updated upstream
 
   .logo-container {
     display: flex;
@@ -140,6 +338,8 @@ textarea {
 
 .nav-links li a:hover {
   background: #f1f1f1;
+=======
+>>>>>>> Stashed changes
 }
 
 
@@ -403,11 +603,38 @@ input[type="submit"] {
   .industry-section .industry-media .g-center {
     display: block;
     aspect-ratio: 4 / 3;
+<<<<<<< Updated upstream
+=======
+    min-height: 360px;
+    background: url("../images/title_image.jpg") center / cover no-repeat;
+    background-color: transparent !important;
+    border: 0 !important;
+    border-radius: 8px;
+    box-shadow: 0 16px 28px rgba(0, 0, 0, .18),
+      0 6px 12px rgba(0, 0, 0, .10);
+
+>>>>>>> Stashed changes
     height: auto;
     border: 6px solid #eee;
     box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08) inset;
   }
 
+<<<<<<< Updated upstream
+=======
+  .industry-section .industry-media .industry-gallery .g-left,
+  .industry-section .industry-media .industry-gallery .g-right {
+    display: none !important;
+    background: transparent !important;
+  }
+
+
+  .industry-section .industry-media .industry-gallery {
+    display: block;
+    max-width: 38rem;
+    margin-left: auto;
+  }
+
+>>>>>>> Stashed changes
   .industry-section .it-heading {
     position: relative;
     text-align: right;
@@ -593,7 +820,31 @@ input[type="submit"] {
   .exp-thumb {
     background: #bdbdbd;
     aspect-ratio: 16 / 9;
+<<<<<<< Updated upstream
     border-radius: 2px;
+=======
+    border-radius: 8px;
+    background-color: transparent !important;
+    border: 0 !important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .16),
+      0 4px 8px rgba(0, 0, 0, .10);
+  }
+
+  .exp-thumb:nth-child(1) {
+    background-image: url("../images/DN_2.jpg");
+  }
+
+  .exp-thumb:nth-child(2) {
+    background-image: url("../images/DN_5.jpg");
+  }
+
+  .exp-thumb:nth-child(3) {
+    background-image: url("../images/DN_4.jpg");
+>>>>>>> Stashed changes
   }
 
   .player-placeholder {
@@ -1981,4 +2232,390 @@ input[type="submit"] {
   .foot .btn-pill {
     max-width: 320px;
   }
+<<<<<<< Updated upstream
+=======
+}
+
+.welcome-anim {
+
+  min-height: 120px;
+  background: transparent;
+}
+
+/* ==========================================
+   ENHANCED STYLES FOR JAVASCRIPT FEATURES
+   ========================================== */
+
+/* SCROLL ANIMATIONS */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.member-card {
+  transition-delay: calc(var(--card-index, 0) * 0.1s);
+}
+
+.show-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* PLYR VIDEO PLAYER */
+.plyr {
+  --plyr-color-main: #d82424;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.plyr__control--overlaid {
+  background: rgba(216, 36, 36, 0.9);
+}
+
+.plyr__control--overlaid:hover {
+  background: #d82424;
+}
+
+@media screen and (min-width: 64em) {
+  .player-placeholder .plyr {
+    border: 10px solid #d82424;
+    border-radius: 0;
+  }
+}
+
+/* COUNTDOWN TIMER */
+#countdown-timer {
+  margin: 1.5rem 0;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.countdown-item {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.countdown-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.countdown-expired {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 64em) {
+  .countdown-grid {
+    gap: 1.25rem;
+    max-width: 600px;
+  }
+
+  .countdown-item {
+    padding: 1.5rem 1rem;
+  }
+
+  .countdown-number {
+    font-size: 3rem;
+  }
+
+  .countdown-label {
+    font-size: 0.85rem;
+  }
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(216, 36, 36, 0.9);
+  border-color: #d82424;
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  line-height: 1;
+  padding: 0.25rem 0.75rem;
+}
+
+.lightbox-prev {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* STICKY HEADER */
+.head {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.head.scroll-down {
+  transform: translateY(-100%);
+}
+
+.head.scroll-up {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* BACK TO TOP BUTTON */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #d82424;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* TEAM CARD HOVER */
+.member-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.member-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* PORTFOLIO EXPANDED STATE */
+.show-item {
+  grid-template-columns: 72px 1fr 56px;
+  grid-template-rows: auto;
+  transition: all 0.3s ease;
+}
+
+.show-item.expanded {
+  grid-template-columns: 72px 1fr 56px;
+  grid-template-rows: auto auto;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.show-details {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #d82424;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.show-details p {
+  margin: 0 0 1rem 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+.show-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.show-btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: #d82424;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.show-btn:hover {
+  background: #b81d1d;
+}
+
+.show-action .caret {
+  transition: transform 0.3s ease;
+}
+
+@media screen and (min-width: 64em) {
+  .show-item.expanded {
+    grid-template-columns: 100px minmax(0, 1fr) 44px;
+    padding: 1.5rem;
+  }
+
+  .show-details {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+}
+
+/* LOADING ANIMATION */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 99999;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+body.loaded::before {
+  opacity: 0;
+}
+
+/* FILTER TRANSITIONS */
+.show-filters .chip {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.show-filters .chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(216, 36, 36, 0.2);
+}
+
+/* ACCESSIBILITY */
+.chip:focus,
+.show-action:focus,
+.back-to-top:focus,
+.lightbox-close:focus,
+.lightbox-prev:focus,
+.lightbox-next:focus {
+  outline: 3px solid #d82424;
+  outline-offset: 3px;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media screen and (max-width: 47.99em) {
+  .countdown-number {
+    font-size: 1.5rem;
+  }
+
+  .countdown-label {
+    font-size: 0.65rem;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+  }
+>>>>>>> Stashed changes
 }

@@ -12,7 +12,7 @@ const oldVideoControls = document.querySelector('#video-controls');
 
 // Countdown
 const countdownElement = document.querySelector('#countdown-timer');
-const eventDate = new Date('April 23, 2025 16:30:00').getTime();
+const eventDate = new Date('April 23, 2026 16:30:00').getTime();
 
 // Scroll Animation
 const animatedElements = document.querySelectorAll('.industry-wrap, .experience-wrap, .imd-info, .sp-wrap, .exh-wrap, .team-wrap, .show-wrap, .member-card, .show-item');
