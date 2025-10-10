@@ -354,11 +354,11 @@ input[type="submit"] {
   overflow: hidden;
 }
 
-.plyr__control--overlaid {
+.plyr-control--overlaid {
   background: rgba(216, 36, 36, 0.9);
 }
 
-.plyr__control--overlaid:hover {
+.plyr-control--overlaid:hover {
   background: #d82424;
 }
 
@@ -368,7 +368,6 @@ input[type="submit"] {
     border-radius: 0;
   }
 }
-
 
 
 @media screen and (min-width: 64em) {
