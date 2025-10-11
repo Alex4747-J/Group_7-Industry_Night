@@ -142,7 +142,12 @@ function handleSmoothScroll(event) {
 function handleIntersection(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            // I'm adding the animation class when element is visible
             entry.target.classList.add('animate-in');
+        } else {
+            // I'm removing the animation class when element is not visible
+            // This allows the animation to trigger again when scrolling back
+            entry.target.classList.remove('animate-in');
         }
     });
 }
